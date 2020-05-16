@@ -5,6 +5,9 @@ from yiban import yb
 
 # 提交的基础表单数据
 # 经纬度需要到小数点后六位
+from yiban.config import url
+
+# 需要填写的表单数据
 base_data = {"98ddd090dc2a7f5ac666daa41ef113f4": "XX姓名", "0735cf0a0b2ad4267ea2578da39a923a": "XX班级",
              "801a459c3503b1aebe54aef1540602ce": {"name": "XX地址名", "location": "XX经度(小数点后6位),XX纬度(小数点后6位)",
                                                   "address": "XX详细地址描述"},
@@ -43,10 +46,6 @@ def get_from_data(url):
     form_data = {i: dict_data[i] for i in base_data.keys()}
     return json.dumps(form_data)
 
-
-# 近几天的一次易班打卡登记表的转发审批表单的链接
-# 需要替换此链接
-url = 'https://app.uyiban.com/workflow/client/#/share?initiateId=xxxxxxxxxxxxxxxxxxxxxx'
 
 # 最终提交的表单数据
 form_data = get_from_data(url)

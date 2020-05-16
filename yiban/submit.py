@@ -6,7 +6,8 @@ from yiban.utils import form_data
 
 if __name__ == '__main__':
     if yb.login() is None:
-        print("帐号或密码错误")
+        print("帐号或密码错误,请确认账号密码密码无误后重试")
+        exit(1)
     result_auth = yb.auth()
     data_url = result_auth["data"].get("Data")
     if data_url is not None:  # 授权过期
@@ -30,6 +31,7 @@ if __name__ == '__main__':
             print("授权失败！")
         print("尝试重新二次登录")
         yb.auth()
+
     all_task = yb.getUncompletedList()
     if len(all_task["data"]) == 0:
         print("没有待完成的打卡任务")
@@ -43,7 +45,8 @@ if __name__ == '__main__':
               "content": [{"label": "任务名称", "value": task_detail["Title"]},
                           {"label": "发布机构", "value": task_detail["PubOrgName"]},
                           {"label": "发布人", "value": task_detail["PubPersonName"]}]}
-        # print(ex)
         submit_result = yb.submit(form_data, json.dumps(ex, ensure_ascii=False))
-        if submit_result.get('code') == '0':
-            print(ex.get("title") + " 打卡成功")
+        if submit_result.get('code') == 0:
+            print(task_detail["Title"] + " 打卡成功")
+            share_url = yb.getShareUrl(submit_result["data"])["data"]["uri"]
+            print("分享的链接为: " + share_url)

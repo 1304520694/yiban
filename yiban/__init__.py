@@ -9,8 +9,9 @@ author: wade
 time: 2020-5-15 15:20
 Reference project: 
 - https://github.com/looyeagee/yiban_auto_submit 
-- https://github.com/Avenshy/YibanCheckin/blob/master/YibanCheckin.py
-Reference link: https://looyeagee.cn/software/yiban
+- https://github.com/Avenshy/YibanCheckin
+Reference link: 
+- https://looyeagee.cn/software/yiban
 """
 
 
