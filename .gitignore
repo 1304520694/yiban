@@ -1,2 +1,3 @@
 .idea
-*/__pycache__
+yiban/__pycache__/
+yiban/yiban/__pycache__/

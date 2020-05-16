@@ -1,8 +1,8 @@
 import json
 import re
 
+from utils import form_data
 from yiban import yb
-from yiban.utils import form_data
 
 if __name__ == '__main__':
     if yb.login() is None:
