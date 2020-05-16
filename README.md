@@ -6,19 +6,20 @@
 </p>
 
 # 目录说明
-
-- yiban
-
-- - __init__.py 存放基础类
-
-- - submit.py 自动打卡脚本
-
-- - testSuccess.py 查看未打卡的任务
-
-- - config.py 存放账号信息
-
-- - utils.py 工具包,完成表单数据的提取和填充
-
+```text
+│  .gitignore
+│  README.md            
+|
+└─yiban
+    │  submit.py        自动打卡脚本
+    │  testSuccess.py   查看未打卡的任务
+    │  utils.py         工具包,完成表单数据的提取和填充
+    │
+    └─yiban
+        │  config.py    存放账号信息
+        │  __init__.py  存放基础类
+        └─
+```
 
 # 安装
 ```shell script
@@ -79,7 +80,7 @@ python submit.py
 
 ## 参考
 
-###Reference project
+### Reference project
 
 - https://github.com/looyeagee/yiban_auto_submit 
 
