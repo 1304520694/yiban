@@ -9,7 +9,8 @@
 ```text
 │  .gitignore
 │  README.md            
-|
+|  yiban_auto_submit.bat    win10打卡脚本
+|  
 └─yiban
     │  submit.py        自动打卡脚本
     │  testSuccess.py   查看未打卡的任务
@@ -68,6 +69,11 @@ python submit.py
 ```
 > 打卡截图:通过打卡成功后生成的分享链接访问浏览器，然后截图
 
+## 服务器每天定时打卡
+每天六点自动执行打卡,将结果保存到当前用户的home目录下的result.txt
+```shell script
+00 06 * * * python3 yiban/submit.py >> ~/result.txt
+```
 
 ## 版本log
 

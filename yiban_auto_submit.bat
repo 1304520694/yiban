@@ -1,0 +1,2 @@
+python submit.py
+pause
